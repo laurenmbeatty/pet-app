@@ -4,7 +4,10 @@ import useDropdown from "./useDropdown";
 import Results from "./Results";
 import ThemeContext from "./ThemeContext";
 
-const petfinder = pf();
+const petfinder = pf({
+  secret: process.env.API_SECRET,
+  key: process.env.API_KEY
+});
 
 const SearchParams = () => {
   const [theme, setTheme] = useContext(ThemeContext);
